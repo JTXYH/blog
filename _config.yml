@@ -66,6 +66,7 @@ gitalk:
   repo: blog_comment    #仓库名称
   owner: JTXYH    #github用户名
   admin: JTXYH
+  
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
