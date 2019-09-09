@@ -2,7 +2,7 @@
 layout:     post                    
 title:      Sublime快捷键                     
 subtitle:   最好用的编辑器               
-date:       2019-8-8               
+date:       2019-9-9               
 author:     JTX                      
 header-img: img/text/19-9-9.jpg   
 catalog: true                        
