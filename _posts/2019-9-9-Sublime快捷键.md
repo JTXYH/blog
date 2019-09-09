@@ -1,0 +1,25 @@
+---
+layout:     post                    
+title:      Sublime快捷键                     
+subtitle:   最好用的编辑器               
+date:       2019-8-8               
+author:     JTX                      
+header-img: img/text/19-9-9.jpg   
+catalog: true                        
+tags:                                
+    - HTML
+---
+
+# Sublime快捷键
+
+**就近选择相同项**：Ctrl+D<br/>
+**选择当前文件所有匹配项**：Alt+F3<br/>
+**选择文本的包裹标签**：Ctrl+Shift+\`<br/>
+**选择文本的包裹标签**：Ctrl+Shift+M<br/>
+**整行的上下移动**：Ctrl+Shift+↑\↓<br/>
+**复制行或选中项**：Ctrl+Shift+D<br/>
+**增加和减少缩进**：Ctrl+\[或者\]<br/>
+**用标签包裹行或选中项**：Alt+Shift+W<br/>
+**大写和小写转换**：*大写*Ctrl+K+U，*小写*Ctrl+K+L<br/>
+**删除一行**：Ctrl+Shift+K<br/>
+**分屏操作**：Alt+Shift+数字<br/>

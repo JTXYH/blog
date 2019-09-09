@@ -27,4 +27,4 @@ tags:
 **自动生成变量名，自动生成变量**:Alt+Shift+L<br/>
 **试试**:Alt+Shift+Z<br/>
 **批量修改名字**:Alt+Shift+R<br/>
-**打开资源**:Ctrl+Shift+R
+**打开资源**:Ctrl+Shift+R<br/>
