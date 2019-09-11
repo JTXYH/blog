@@ -7,7 +7,7 @@ author:     JTX
 header-img: img/text/19-8-2.jpg   
 catalog: true                        
 tags:                                
-    - JAVA
+    - 教程
 ---
 # eclipse快捷键
 
