@@ -1,6 +1,6 @@
 ---
 layout:     post                    
-title:      Eclipse快捷键                     
+title:      Eclipse使用                     
 subtitle:   Java的编辑器               
 date:       2019-8-8               
 author:     JTX                      
@@ -61,3 +61,8 @@ tags:
 
 #### 打开资源
 **Ctrl+Shift+R**
+
+#### 设置自动换行
+1. **菜单栏选【 Help 】→【 install new Software】**
+2. 点解Add按钮，**在“ Name ”中填入“ wordwrap ”，“ URL ”中填入“ http://ahtik.com/eclipse-update”安装**
+3. 装完后在代码编辑界面点右键，出现**Word Warp**属性，将这个属性选上就可以实现自动换行
