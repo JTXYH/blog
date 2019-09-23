@@ -1,17 +1,17 @@
 # Site settings
-title: JtxBlog   # 打开网站的左上角和中间显示的名称
-SEOTitle: JTX的博客  # 网站的搜索标题
+title: Blog   # 打开网站的左上角和中间显示的名称
+SEOTitle: 一个米粉的博客  # 网站的搜索标题
 header-img: img/index.jpg  # 首页的背景图片
 email: tianxiang1314520@gmail.com  # 个人介绍页的邮箱
 description: "You need to work harder"  # 给你自己的一句话，在中间显示
-keyword: "JtxBlog,创建博客,Java教程,python教程,前端教程,github博客创建教程,Jtx的博客"  # 搜索网站的关键词
+keyword: "JtxBlog,米粉的博客,创建博客,Java教程,python教程,前端教程,github博客创建教程,Jtx的博客"  # 搜索网站的关键词
 url: "http://jtxyh.github.io"          # 你的网站的地址
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/JTXYH/JTXYH.github.io" # 你仓库的地址
 
 # Sidebar settings
 sidebar: true                           # 是否显示About页面
-sidebar-about-description: "我就是我，是颜色不一样的烟火"  # 给你自己一句话
+sidebar-about-description: "永远相信美好的事情即将发生"  # 给你自己一句话
 sidebar-avatar: /img/avatar_m.jpg      # About页面的背景图
 
 
