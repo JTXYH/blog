@@ -224,9 +224,10 @@ tags:
     3. **floor(值)**：向下取整
     4. **round(值)**：四舍五入
 * 属性：**PI**和其他。。
-#### 5、Number
-#### 6、String
-#### 7、RegExp
-#### 8、Global
-#### 9、其他
+#### 5、RegExp(正则)
+* 正则表达式[https://jtxyh.github.io/2018/11/27/正则表达式/]
+#### 6、Global
+#### 7、其他
 1. **Boolean**
+2. **Number**
+3. **String**
