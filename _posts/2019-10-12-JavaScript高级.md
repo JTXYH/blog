@@ -20,10 +20,10 @@ tags:
     * **Location**：地址栏对象
 
 #### 1、Window
-* 特点：
+* **特点**：
     1. Window对象**不需要创建**，可以直接使用。**window.方法名();**
     2. window引用可以省略。**方法名();**
-* 方法：
+* **方法**：
     * 与**弹出框有关**的方法
         1. **alert(内容)**：显示一段消息和一个确认按钮的**警告框**
         2. **confirm(内容)**：显示一段消息和确认按钮和取消按钮的**对话框**
@@ -35,10 +35,30 @@ tags:
         1. **close()**：关闭浏览器窗口，谁调用就关谁
         2. **open(可以写新窗口的地址)**：打开一个新的浏览器窗口，**返回新的window对象**
     * 与**定时器有关**的方法：
-        1. **setTimeout()**：在指定毫秒数后执行函数，只**执行一次**
-        2. **clearTimeout()**：取消**setTimeout()**方法设置的timeout
-        3. **setInterval()**：在指定毫秒数后执行函数，**一直执行**
-        4. **clearInterval()**：取消**setInterval()**方法设置的timeout
+        1. **setTimeout("函数()",毫秒数)**：在指定毫秒数后执行函数，只**执行一次**，返回一个**id**，用于取消定时器
+        2. **clearTimeout(定时器id)**：取消**setTimeout()**方法设置的timeout
+        3. **setInterval("函数()",毫秒数)**：在指定毫秒数后执行函数，**一直执行**，返回一个**id**，用于取消定时器
+        4. **clearInterval(定时器id)**：取消**setInterval()**方法设置的timeout
+* **属性**：
+    1. **获取其他BOM对象**：
+        * history
+        * location
+        * Navigator
+        * Screen
+    2. **获取DOM对象**
+        * document
+
+#### 2、Location
+* 创建(获取)：
+    1. **window.location**
+    2. **location**
+* 方法：
+    1. **reload()**：重新加载当前文档(刷新)
+* 属性：
+    1. **href**：设置或返回完整的URL
+
+#### 3、History
+
 
 # DOM：
 * 功能：**控制html文档内容**
