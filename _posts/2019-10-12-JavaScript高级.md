@@ -11,6 +11,8 @@ tags:
 ---
 
 # BOM：
+<hr>
+
 1. 概念：**Browser Object Model(浏览器对象模型)**，将浏览器的各个组成部分**封装为对象**
 2. 组成：
     * **Window**：窗口对象
@@ -58,13 +60,52 @@ tags:
     1. **href**：设置或返回完整的URL
 
 #### 3、History
-
+* 创建(获取)：
+    1. **window.history**
+    2. **history**
+* 属性：**length**，返回**当前窗口**历史列表中的URL数量
+* 方法：
+    1. **back()**：加载**前一个**URL
+    2. **forward()**：加载**下一个**URL
+    3. **go(参数)**：加载某一个具体页面
+        * 参数如果是**正数**，表示前进几个历史记录，**负数**，表示后退几个历史记录
 
 # DOM：
-* 功能：**控制html文档内容**
-* **代码**：**获取**页面标签(元素)对象**id**
-    * **document.getElementById("id名称");**
+<hr>
+
+* 概念：**Document Object Model(文档对象模型)**，将标记语言文档的各个组成部分**封装为对象**。可以使用这些对象，对标记语言文档进行**CRUD**操作
+* W3C DOM标准模型：
+    1. **核心DOM**-针对任何结构化文档
+        * **Document**：文档对象
+        * **Element**：元素对象
+        * **Attribut**：属性对象
+        * **Text**：文本对象
+        * **Comment**：注释对象
+        * **Node**：节点对象，其他几个的**父对象**
+    2. **XML DOM**-针对XML文档
+    3. **HTML DOM**-针对HTML文档
+
+#### 1、核心DOM模型
+* **Document**：文档对象
+    1. 创建(获取)：在html dom模型中使用**window对象来获取**
+        * **window.document**
+        * **document**
+    2. 方法：
+        1. **获取Element对象**
+            * **getElementById()**：根据id获取元素对象
+            * **getElementsByTagName()**：根据元素名称获取所有元素对象，**返回数组**
+            * **getElementsByClassName()**：根据class获取所有元素对象，**返回数组**
+            * **getElementsByName()**：根据name属性值获取所有元素对象，**返回数组**
+        2. **创建其他DOM对象**
+
+* **Element**：元素对象
+* **Node**：节点对象
+
+#### 2、HTML DOM
+
 # 事件
+<hr>
+
 * 功能：**某些组件被执行了某系操作后，触发某些代码的执行**
 * 绑定事件：
     1. **直接在html标签上，指定事件的属性(操作)，属性值就是js代码**
