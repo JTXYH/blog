@@ -82,4 +82,5 @@ tags:
 3. **插件**：
     * 轮播图
 
-教程查看--->[BootstrapCSS教程](https://v3.bootcss.com/css/)
+CSS教程查看--->[BootstrapCSS教程](https://v3.bootcss.com/css/)<br/>
+JavaScript教程--->[BootstrapJavaScript教程](https://v3.bootcss.com/javascript/)
