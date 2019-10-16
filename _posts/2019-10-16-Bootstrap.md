@@ -14,7 +14,6 @@ tags:
 1. 支持响应式布局：**同一套页面兼容不同分辨率设备**
 2. 下载：点击-->[Bootstrap](https://v3.bootcss.com)
 3. 模板
-
 ```html
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -66,9 +65,11 @@ tags:
     * 图片：
         *  class="img-responsive"：图片在任意尺寸都占100%
         *  图片形状
-            *  <img src="..." alt="..." class="img-rounded">：方形
-            *  <img src="..." alt="..." class="img-circle"> ： 圆形
-            *  <img src="..." alt="..." class="img-thumbnail"> ：相框
+        ```html
+        <img src="..." alt="..." class="img-rounded">：方形
+        <img src="..." alt="..." class="img-circle"> ： 圆形
+        <img src="..." alt="..." class="img-thumbnail"> ：相框
+        ```
     * 表格
         * table
         * table-bordered
