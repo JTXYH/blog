@@ -14,6 +14,7 @@ tags:
 1. 支持响应式布局：**同一套页面兼容不同分辨率设备**
 2. 下载：点击-->[Bootstrap](https://v3.bootcss.com)
 3. 模板
+
 ```html
 <!DOCTYPE html>
 <html lang="zh-CN">
