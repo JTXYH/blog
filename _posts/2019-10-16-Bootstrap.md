@@ -71,9 +71,9 @@ tags:
         <img src="..." alt="..." class="img-thumbnail"> ：相框
         ```
     * 表格
-        * table
-        * table-bordered
-        * table-hover
+        * **table**
+        * **table-bordered**
+        * **table-hover**
     * 表单
         * 给表单项添加：class="form-control" 
 2. **组件**：
@@ -81,3 +81,5 @@ tags:
     * 分页条
 3. **插件**：
     * 轮播图
+
+教程查看--->[BootstrapCSS教程](https://v3.bootcss.com/css/)
