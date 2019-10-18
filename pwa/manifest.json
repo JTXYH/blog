@@ -1,0 +1,19 @@
+{
+  "name": "Jtx Blog",
+  "short_name": "Blog",
+  "description": "A personal blog by engineer",
+  "icons": [{
+    "src": "icons/Blog-128.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }, {
+    "src": "icons/Blog-512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#f4e24c",
+  "theme_color": "#fff",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
