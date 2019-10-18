@@ -44,7 +44,7 @@ two_columns_layout: true   # 在一列和两列之间  切换帖子的布局
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 google_analytics: "UA-125866747-1"
-language: "zh_cn"
+language: "en"
 
 
 # Build settings
