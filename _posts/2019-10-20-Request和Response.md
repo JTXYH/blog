@@ -80,6 +80,7 @@ tags:
     * **get方式**：tomcat8解决了中文乱码方式
     * **post方式**：会有乱码
         * 需要设置字符集为：**request.setCharacterEncoding\("utf-8"\)**
+
 #### 2、请求转发
 * 一种在服务器内部的**资源跳转方式**
 * **步骤**：
@@ -91,6 +92,7 @@ tags:
     1. 浏览器**地址栏路径不发生变化**
     2. 只能转发到**当前服务器内部资源中**
     3. 转发是**一次请求**
+
 #### 3、共享数据
 * **域对象**：一个有作用范围的对象，可以在**范围内共享数据**
 * **request域**：代表**一次请求**的范围，一般用于**请求转发的多个资源中共享数据**
@@ -101,10 +103,12 @@ tags:
         * object **getAttribute\(String name\)**
     3. 通过键移除键值对
         * void **removeAttribute\(String name\)**
+
 #### 4、获取ServletContext
 * 获取
     * ServletContext **getServletContext\(\)**
-#### BeanUtils技术
+
+# BeanUtils技术
 * 导入jar包：
     1. **[下载BeanUtils](https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils/1.9.3)**
     2. **[下载Logging](https://mvnrepository.com/artifact/commons-logging/commons-logging/1.2)**
