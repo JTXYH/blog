@@ -46,16 +46,17 @@ tags:
         * **String getHeader\(String name\)**
     2. 获取所有的请求头名称：
         * **Enumeration<String> getHeaderNames\(\)**
-    ```java
-    // 获取所有请求头名称
-    Enumeration<String> headerNames = request.getHeaderNames();
-    // 遍历
-    while(headerNames.hasMoreElements()){
-        String name = headerNames.nextElement();
-        //根据名称获取请求头
-        String value = request.getHeader(name);
-    }
-    ```
+        ```java
+        // 获取所有请求头名称
+        Enumeration<String> headerNames = request.getHeaderNames();
+        // 遍历
+        while(headerNames.hasMoreElements()){
+            String name = headerNames.nextElement();
+            //根据名称获取请求头
+            String value = request.getHeader(name);
+        }
+        ```
+
 #### 3、获取请求体数据
 * 只有**POST**请求方式才有请求体
 * 步骤：
