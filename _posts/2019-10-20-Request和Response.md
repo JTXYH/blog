@@ -114,7 +114,7 @@ tags:
     2. **[下载Logging](https://mvnrepository.com/artifact/commons-logging/commons-logging/1.2)**
 
 * **注意**：出现**java.lang.ClassNotFoundException**时
-    * **需要把beanutils.jar包和logging.jar包放到Tomcat的lib目录下面**
+    * **需要把beanutils.jar包和logging.jar包放到Tomcat的\WEB-INF\lib目录下面**
 
 ```java
 // 设置字符编码
