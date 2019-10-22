@@ -1,6 +1,6 @@
 ---
 layout:     post                   
-title:      Request和Response
+title:      Request,Response和ServletContext
 subtitle:   Servlet相关知识              
 date:       2019-10-20               
 author:     极客小祥                      
@@ -88,10 +88,6 @@ tags:
         * RequestDispatcher **getRequestDispatcher\(String path\)**
     2. 使用RequestDispatcher对象进行转发
         * **forword\(ServletRequest request,ServletResponse response\)**
-* **特点**：
-    1. 浏览器**地址栏路径不发生变化**
-    2. 只能转发到**当前服务器内部资源中**
-    3. 转发是**一次请求**
 
 #### 3、共享数据
 * **域对象**：一个有作用范围的对象，可以在**范围内共享数据**
@@ -151,3 +147,78 @@ BeanTest beanTest = new BeanTest();
         * String **getProperty\(String name\)**
     3. **将map集合的键值对信息，封装到相应的JavaBean对象中**
         * void **popular\(Object obj,Map<String, String[]> map\)**
+
+# Response对象
+* 功能：设置响应消息
+
+#### 1、设置响应行
+1. 格式：HTTP/1.1 200 OK
+2. 设置状态码：**setStatus\(int sc\)**
+
+#### 2、设置响应头
+1. **response.setHeader\(String name,String value\)**
+
+#### 3、设置响应体
+* 使用步骤：
+    1. **获取输出流**
+        * 首先设置**字符编码**：**response.setContentType\("text/html;charset=utf-8"\)**
+        * 字符输出流：PrintWriter **getWriter\(\)，只能获取字符数据**
+        * 字节输出流：ServletOutputStream **getOutputStream\(\)，可以操作所有类型数据**
+    2. **使用输出流**，将数据输出到客户端浏览器
+
+# 重定向和转发
+* **转发特点**：forward
+    1. 浏览器**地址栏路径不发生变化**
+    2. 只能转发到**当前服务器内部资源中**
+    3. 转发是**一次请求**
+* **重定向特点**：redirect
+    1. 浏览器**地址栏路径发生变化**
+    2. 可以访问**其他站点\(服务器\)资源**
+    3. 重定向是**两次请求**，**不能使用request对象来共享数据**
+
+    ```java
+    /设置状态码为302
+    resp.setStatus(302);
+    // 设置响应头location
+    resp.setHeader("location","req.getContextPath()+/demo2");
+    ------------------------
+    * 简单使用的重定向方法
+    resp.sendRedirect("/00_Test/demo2");
+        }
+    ```
+# 路径写法
+1. **相对路径**：通过相对路径**不可以**确定唯一资源
+    * ./index.html
+    * **不以 / 开头，以 . 开头**
+    * **规则**：找到当前资源和目标资源之间的相对位置关系
+2. **绝对路径**：通过绝对路径**可以**确定唯一资源
+    * /day01/demo1
+    * **以 / 开头**
+    * 规则：
+        1. 给客户端浏览器使用：**需要**加虚拟目录\(**项目路径**\)
+            * 虚拟目录使用：**request.getContextPath\(\)动态获取**
+        2. 给服务器使用：**不需要**加虚拟目录
+
+# ServletContext对象
+概念：**代表整个web应用，可以和程序的容器\(服务器\)来通信**
+
+#### 1、获取：
+1. 通过request对象获取
+    * **request.getServletContext\(\)**
+2. 通过HTTPServlet获取
+    * **this.getServletContext\(\)**
+
+#### 2、功能：
+1. **获取MIME类型**
+    * MIME类型：在互联网通信过程中定义的一种**文件数据类型**
+    * 格式：**大类型/小类型**
+        * text/html   image/jpeg
+    * 获取：**String getMimeType\(String file\)**
+2. **域对象**：共享数据
+    1. **setAttribute\(String name,Object value\)**
+    2. **getAttribute\(String name\)**
+    3. **removeAttribute\(String name\)**
+
+    * ServletContext**对象范围**：**所有用户所有请求的数据**
+2. **获取文件的真实\(服务器\)路径**
+    1. 方法：**String getRealPath\(String path\)**
