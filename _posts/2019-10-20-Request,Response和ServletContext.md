@@ -186,6 +186,7 @@ BeanTest beanTest = new BeanTest();
     resp.sendRedirect("/00_Test/demo2");
         }
     ```
+    
 # 路径写法
 1. **相对路径**：通过相对路径**不可以**确定唯一资源
     * ./index.html
