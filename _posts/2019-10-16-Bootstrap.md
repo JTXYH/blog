@@ -4,7 +4,7 @@ title:      Bootstrap
 subtitle:   前端框架               
 date:       2019-10-16               
 author:     极客小祥                      
-header-img: img/text/19-10-16.jpg   
+header-img: img/text/WEB.jpg   
 catalog: true              
 tags:                                
     - WEB

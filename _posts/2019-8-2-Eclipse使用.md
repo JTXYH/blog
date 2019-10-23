@@ -4,10 +4,10 @@ title:      Eclipse使用
 subtitle:   Java的编辑器               
 date:       2019-8-2               
 author:     极客小祥                      
-header-img: img/text/19-8-2.jpg   
+header-img: img/text/TOTURIAL.jpg   
 catalog: true                        
 tags:                                
-    - 教程
+    - TOTURIAL
 ---
 # eclipse快捷键
 

@@ -4,7 +4,7 @@ title:      JavaScript基础
 subtitle:   最流行的脚本语言               
 date:       2019-10-10               
 author:     极客小祥                      
-header-img: img/text/19-10-10.jpg   
+header-img: img/text/WEB.jpg   
 catalog: true                        
 tags:                                
     - WEB

@@ -4,7 +4,7 @@ title:      Cookie和Session
 subtitle:   会话技术               
 date:       2019-10-22               
 author:     极客小祥                      
-header-img: img/text/19-10-19.jpg   
+header-img: img/text/WEB.jpg   
 catalog: true                        
 tags:                                
     - WEB
