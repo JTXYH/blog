@@ -10,9 +10,9 @@ baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/JTXYH/JTXYH.github.io" # 你仓库的地址
 
 # Sidebar settings
-sidebar: true                           # 是否显示About页面
+sidebar: true                           # 是否显示侧边的个人简介
 sidebar-about-description: "永远相信美好的事情即将发生"  # 给你自己一句话
-sidebar-avatar: /img/avatar_m.jpg      # About页面的背景图
+sidebar-avatar: /img/avatar_m.jpg      # 头像
 
 
 
