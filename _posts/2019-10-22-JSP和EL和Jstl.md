@@ -44,26 +44,16 @@ tags:
 
 变量名			|		     真实类型			|			  作用           |
  ---            |             ---               |             ---              |
-* **pageContext**	|			PageContext			|		当前页面共享数据，还可以获取其他八个内置对象    |
-* **request**		|			HttpServletRequest	|		一次请求访问的多个资源(转发)                  |
-* **session**		|			HttpSession			|		一次会话的多个请求间                         |
-* **application**	|			ServletContext		|		所有用户间共享数据                           |
-* **response**		|			HttpServletResponse	|		响应对象                                    |
-* **page**			|			Object				|		当前页面(Servlet)的对象  this                |
-* **out**			|			JspWriter			|		输出对象，数据输出到页面上                    |
-* **config**		|			ServletConfig		|		Servlet的配置对象                           |
-* **exception**		|			Throwable			|		                                            |
+**pageContext**	|			PageContext			|		当前页面共享数据，还可以获取其他八个内置对象    |
+**request**		|			HttpServletRequest	|		一次请求访问的多个资源(转发)                  |
+**session**		|			HttpSession			|		一次会话的多个请求间                         |
+**application**	|			ServletContext		|		所有用户间共享数据                           |
+**response**	|		    HttpServletResponse	|		响应对象                                 |
+**page**		|		    Object				|		当前页面(Servlet)的对象  this             |
+**out**			|			JspWriter			|		输出对象，数据输出到页面上                    |
+**config**		|			ServletConfig		|		Servlet的配置对象                           |
+**exception**	|		    Throwable		    |		                                        |
 
-1. **request**：**请求**对象
-2. **response**：**响应**对象
-3. **out**：**字符输出流对象**，可以将数据输出到页面上
-    * **response.getWriter\(\)和out.writer\(\)的区别**
-        * 在Tomcat服务器真正给客户端做出响应之前，会**先找到response缓冲区**数据，**再找out缓冲区**数据。
-        * response.getWriter\(\)数据**输出**永远在out.writer\(\)**之前**
-4. **pageContext**：
-5. **session**：
-6. **application**：
-7. **page**：
-8. **out**：
-9. **config**：
-10. **exception**：
+* **response.getWriter\(\)和out.writer\(\)的区别**
+    * 在Tomcat服务器真正给客户端做出响应之前，会**先找到response缓冲区**数据，**再找out缓冲区**数据。
+    * response.getWriter\(\)数据**输出**永远在out.writer\(\)**之前**
