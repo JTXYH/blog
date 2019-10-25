@@ -102,6 +102,6 @@ se.removeSession("name")
 4. session用于**存储一次会话的多次请求的数据**，存在服务器
 5. session可以**存储任意类型，任意大小的数据**
 6. session与Cookie区别：
-    1. session存在**服务器**，cookie存在**客户端**
-    2. session**没有**数据大小限制，cookie**有**
-    3. session数据**安全**，cookie相对**不安全**
+    * session存在**服务器**，cookie存在**客户端**
+    * session**没有**数据大小限制，cookie**有**
+    * session数据**安全**，cookie相对**不安全**
