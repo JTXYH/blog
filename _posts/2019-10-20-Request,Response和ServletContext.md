@@ -21,6 +21,7 @@ tags:
 3. org.apache.catalina.connector.RequestFacade **--类\(tomcat\)**
 
 # 获取请求消息数据功能
+
 #### 1、获取请求行数据
 * 格式：**GET /day01/test1?name=lisi HTTP/1.1**
 * 方法：
@@ -40,6 +41,7 @@ tags:
         * String  **getProtocol\(\)**
     8. 获取客户机IP地址：
         * String  **getRemoteAddr\(\)**
+
 #### 2、获取请求头数据
 * 方法：
     1. 通过请求头的名称获取请求头：
@@ -203,13 +205,13 @@ BeanTest beanTest = new BeanTest();
 # ServletContext对象
 概念：**代表整个web应用，可以和程序的容器\(服务器\)来通信**
 
-#### 1、获取：
+#### 1、获取
 1. 通过request对象获取
     * **request.getServletContext\(\)**
 2. 通过HTTPServlet获取
     * **this.getServletContext\(\)**
 
-#### 2、功能：
+#### 2、功能
 1. **获取MIME类型**
     * MIME类型：在互联网通信过程中定义的一种**文件数据类型**
     * 格式：**大类型/小类型**
