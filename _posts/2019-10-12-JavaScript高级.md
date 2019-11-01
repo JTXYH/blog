@@ -58,6 +58,11 @@ tags:
     1. **reload()**：重新加载当前文档(刷新)
 * 属性：
     1. **href**：设置或返回完整的URL
+        
+        ```javascript
+        跳转到这个页面
+        window.location.href = "./index.html";
+        ```
 
 #### 3、History
 * 创建(获取)：
