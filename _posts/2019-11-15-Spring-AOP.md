@@ -40,6 +40,9 @@ tags:
     * 异常通知的**throwing**配置的是异常方法名称，**名称必须与形参一直**，**形参为Exception**
 6. 每个通知方法中的**JoinPoint**为接入点，即方法，可以通过属性获取到相关信息
     * **jp.getSignature\(\).getName\(\)**：获取到执行对象的**方法名**
+    * **jp.getTarget\(\)**：获取到**接口的实现类**
+    * **jp.getArgs\(\)**：获取**方法传入的形参**
+7. 使用**环绕通知**，方法的返回值必须是**Object**，形参必须是**ProceedingJoinPoint**
 
 ```xml
 在xml配置头中需要引入spring-aop的配置地址
@@ -106,4 +109,38 @@ public class MyAop {
 		System.out.println("最终通知："+methedName);
 	}
 }
+```
+
+```java
+// 切面bean对象
+@Component // 实现被包扫描扫描到
+@Aspect // 日志切面aspect
+public class MyAop2 {
+	@Pointcut("execution(* io.jtxyh.service.*.*(..))")
+	public void myAop() {};
+	
+	"环绕通知，方法的返回值必须是Object，形参必须是ProceedingJoinPoint"
+	@Around("myAop()")
+	public Object around(ProceedingJoinPoint jp) {
+		Object target = jp.getTarget(); "impl对象"
+		String methodName = jp.getSignature().getName(); "方法名"
+		Object[] args = jp.getArgs(); "调用方法传入的形参"
+		Object result = null;
+		System.out.println("impl对象："+target+"----方法名："+methodName+"----方法的形参："+Arrays.toString(args));
+		try {
+			System.out.println("环绕前置通知。。。。。");
+
+			result = jp.proceed();
+			
+            System.out.println("环绕后置通知");
+		} catch (Throwable e) {
+			System.out.println("环绕异常通知。。。。。");
+			e.printStackTrace();
+		}finally {
+			System.out.println("环绕结束通知");
+		}
+		return result; "返回调用方法的返回值"
+	}
+}
+
 ```
