@@ -27,7 +27,7 @@ tags:
 5. **Aspect\(切面\)**：由**Pointcut\(切点\)**和**Advice\(通知\)**组成，包括**横切逻辑和连接点**定义
 6. **Target\(目标对象\)**：被代理的目标对象，**已经存在的原对象**
 
-# 使用
+# 配置和使用
 #### 1、注解配置
 1. 导入**spring-IOC的相关jar包**，还有下面这些
 ![spring-aopJar.png](https://i.loli.net/2019/11/15/STk7zZi4jhdGHo5.png)
@@ -210,4 +210,17 @@ public class MyXmlAop {
 		</aop:aspect>
 	</aop:config>
 </beans>
+```
+
+#### 3、使用
+* 注解配置和XML配置**只需要使用其中一种**，多配会**报错**
+
+```java
+public static void main(String[] args) {
+    ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+    "必须调用的是接口，不能是impl"
+    UserService us = ac.getBean(UserService.class);
+    UserInfo user = us.getUser();
+    System.out.println("打印的返回值："+user.toString());
+}
 ```
