@@ -28,21 +28,22 @@ tags:
 6. **Target\(目标对象\)**：被代理的目标对象，**已经存在的原对象**
 
 # 配置和使用
-#### 1、注解配置
-1. 导入**spring-IOC的相关jar包**，还有下面这些
+* 导入**spring-IOC的相关jar包**，还有下面这些
 ![spring-aopJar.png](https://i.loli.net/2019/11/15/STk7zZi4jhdGHo5.png)
-2. 创建**xml配置文件进行包扫描**和**切面类**
-3. 切入点pointcut属性配置：**execution\(返回值类型 包名.类名.方法名\(形参类型\)\)**
-4. 在前置通知**@Before**和最终通知**@After**的属性中配置的是**切入点的方法**
-5. 在返回通知**@AfterReturning**和异常通知**@AfterThrowing**中
+
+#### 1、注解配置
+1. 创建**xml配置文件进行包扫描**和**切面类**
+2. 切入点pointcut属性配置：**execution\(返回值类型 包名.类名.方法名\(形参类型\)\)**
+3. 在前置通知**@Before**和最终通知**@After**的属性中配置的是**切入点的方法**
+4. 在返回通知**@AfterReturning**和异常通知**@AfterThrowing**中
     * **pointcut**配置的是**切入点的方法**
     * 返回通知的**returning**配置的是返回值对象的名称，**名称必须与形参一直**，**形参必须是Object**
     * 异常通知的**throwing**配置的是异常方法名称，**名称必须与形参一直**，**形参为Exception**
-6. 每个通知方法中的**JoinPoint**为接入点，即方法，可以通过属性获取到相关信息
+5. 每个通知方法中的**JoinPoint**为接入点，即方法，可以通过属性获取到相关信息
     * **jp.getSignature\(\).getName\(\)**：获取到执行对象的**方法名**
     * **jp.getTarget\(\)**：获取到**接口的实现类**
     * **jp.getArgs\(\)**：获取**方法传入的形参**
-7. 使用**环绕通知**，方法的返回值必须是**Object**，形参必须是**ProceedingJoinPoint**
+6. 使用**环绕通知**，方法的返回值必须是**Object**，形参必须是**ProceedingJoinPoint**
 
 ```xml
 在xml配置头中需要引入spring-aop的配置地址
@@ -147,7 +148,7 @@ public class MyAop2 {
 
 #### 2、xml文件配置
 1. 定义一个**普通的类**，里面写上需要的方法
-2. 在xml文件中配置
+2. 在xml文件中**配置相关标签**
 
 ```java
 public class MyXmlAop {
