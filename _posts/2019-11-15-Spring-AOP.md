@@ -28,7 +28,7 @@ tags:
 6. **Target\(目标对象\)**：被代理的目标对象，**已经存在的原对象**
 
 # 使用
-#### 1、注解
+#### 1、注解配置
 1. 导入**spring-IOC的相关jar包**，还有下面这些
 ![spring-aopJar.png](https://i.loli.net/2019/11/15/STk7zZi4jhdGHo5.png)
 2. 创建**xml配置文件进行包扫描**和**切面类**
@@ -143,4 +143,71 @@ public class MyAop2 {
 	}
 }
 
+```
+
+#### 2、xml文件配置
+1. 定义一个**普通的类**，里面写上需要的方法
+2. 在xml文件中配置
+
+```java
+public class MyXmlAop {
+	
+	"设置前置通知"
+	public void before(JoinPoint jp) {
+		System.out.println("前置通知========="+jp.getSignature().getName());
+	}
+	
+	"设置返回通知方法"
+	public void afterRu(JoinPoint jp) {
+		System.out.println("后置通知========="+jp.getSignature().getName());
+	}
+	
+    "设置异常通知方法"
+	public void afterThrowing(JoinPoint jp) {
+		System.out.println("异常通知=========");
+	}
+	
+	"设置最终通知"
+	public void after(JoinPoint jp) {
+		System.out.println("最终通知========="+jp.getSignature().getName());
+	}
+}
+```
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<context:component-scan base-package="io.jtxyh"></context:component-scan>
+
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+ 
+    将文件加载到bean中
+	<bean id="myXmlAop" class="io.jtxyh.aop.MyXmlAop"></bean>
+
+	<aop:config>
+		通过bean找到文件
+		<aop:aspect ref="myXmlAop">
+			指定切入点
+			<aop:pointcut expression="execution(* io.jtxyh.service.*.*(..))" id="myXmlPon"/>
+			指定前置方法
+			<aop:before method="before" pointcut-ref="myXmlPon"/>
+			指定后置通知
+			<aop:after-returning method="afterRu" pointcut-ref="myXmlPon"/>
+			指定异常通知
+			<aop:after-throwing method="afterThrowing" pointcut-ref="myXmlPon"/>
+			指定最终通知方法
+			<aop:after method="after" pointcut-ref="myXmlPon"/>
+		</aop:aspect>
+	</aop:config>
+</beans>
 ```
