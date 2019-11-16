@@ -41,9 +41,7 @@ public void testAdd(){
 #### 3、其他注解
 
 ```java
-
 "设置@Test方法的执行顺序为字典的顺序执行"
-
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestJunit {
     @BeforeClass
@@ -55,7 +53,6 @@ public class TestJunit {
     public void test4() {
         System.out.println("每个Test方法开始执行之前执行");
     }
-
 
     @Test
     public void test9() {

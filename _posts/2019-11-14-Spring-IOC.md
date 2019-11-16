@@ -152,7 +152,6 @@ public class ApplicationConfig {
     
     
     '自定义数据库连接池对象的bean'
-
     @Bean
     public DataSource getDataSource() {
         DruidDataSource ds = new DruidDataSource();
@@ -242,27 +241,29 @@ public class UserDaoImpl implements UseDao{
     * **entry**：有**属性key和value**，分别填写map的键和值
 
 ```xml
-<property name="myList">
-<list>
-    <value>list值1</value>
-    <value>list值2</value>
-    <value>list值3</value>
-</list>
-</property>
-<property name="myArray">
-    <array>
-        <value>Array值1</value>
-        <value>Array值2</value>
-        <value>Array值3</value>
-    </array>
-</property>
-<property name="myMap">
-    <map>
-        <entry key="1" value="Map值1"></entry>
-        <entry key="2" value="Map值2"></entry>
-        <entry key="3" value="Map值3"></entry>
-    </map>
-</property>
+<bean id="ListAdd" class="io.jtxyh.service.impl.UserServiceImpl">
+    <property name="myList">
+    <list>
+        <value>list值1</value>
+        <value>list值2</value>
+        <value>list值3</value>
+    </list>
+    </property>
+    <property name="myArray">
+        <array>
+            <value>Array值1</value>
+            <value>Array值2</value>
+            <value>Array值3</value>
+        </array>
+    </property>
+    <property name="myMap">
+        <map>
+            <entry key="1" value="Map值1"></entry>
+            <entry key="2" value="Map值2"></entry>
+            <entry key="3" value="Map值3"></entry>
+        </map>
+    </property>
+</bean
 ```
 
 #### 5、内部bean注入
