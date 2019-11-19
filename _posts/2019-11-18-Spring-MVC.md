@@ -15,7 +15,7 @@ tags:
 
 1. 用户**发送请求** 
 2. 请求**进入中央处理器DispatcherServlet**，解析URI，**调用处理器映射器**
-3. 处理器映射器RequestMappingHandlerMapping**根据uri找到一个具体的HandlerMethod**，**返回**给DispatcherServlet
+3. **处理器映射器RequestMappingHandlerMapping**根据uri找到一个具体的**HandlerMethod**，**返回**给DispatcherServlet
 4. DispatcherServlet调用**处理器适配器RequestMappingHandlerAdapter执行HandlerMethod**，**返回ModelAndView对象**给中央处理器
 5. DispatcherServlet调用**视图解析器ViewResolver解析View视图**，**返回逻辑视图View**给DispathcerSrevlet
 6. DispatcherServlet把**ModelAndView对象中数据放在request作用域**中
@@ -31,7 +31,7 @@ tags:
 3. **HandlerAdapter处理器适配器**：找到Handler处理器对象后，由DispatcherServlet前端控制器**调用HandlerAdapter来执行HandlerMethod**,**Handler处理器方法返回给适配器ModelAndView对象**
 ![HandlerAdapter.png](https://i.loli.net/2019/11/18/HmpXiGaB5cVRenK.png)
 4. **Handler处理器对象**：自己编写，相当于**Controller**
-5. **MOderAndView模型与视图对象**：是springmvc框架的一个底层对象，包括 **Model和View**，代表**数据与视图部分**，Handler执行完成后，返回**给Adapter的是ModelAndView对象**。Adapter再把**该对象返回给DispatherServlet前端控制器**
+5. **ModerAndView模型与视图对象**：是springmvc框架的一个底层对象，包括 **Model和View**，代表**数据与视图部分**，Handler执行完成后，返回**给Adapter的是ModelAndView对象**。Adapter再把**该对象返回给DispatherServlet前端控制器**
 6. **ViewResolve视图解析器对象**：前端控制器**请求视图解析器去进行视图解析**，根据逻辑视图名解析成真正的视图(jsp)，视图解析器**向前端控制器返回View**，DispatcherServlet负责**渲染视图**，将模型数据(在ModelAndView对象中)填充到request作用域，便于显示数据,最终响应用户
 
 # 使用
@@ -406,7 +406,7 @@ public class RestTest {
     "一般只需要重写preHandle方法"
     public class MyloginInterceptor implements HandlerInterceptor{
 
-	"Handler执行前前置"
+	"Handler执行前执行"
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
