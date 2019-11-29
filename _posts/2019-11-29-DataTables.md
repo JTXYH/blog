@@ -13,6 +13,7 @@ tags:
 # 简介
 * 官网：**[DataTables](https://datatables.net/examples/)**
 * 导入**CDN链接**：
+
     ```html
     <link href="https://cdn.bootcss.com/datatables/1.10.19/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/datatables/1.10.19/js/dataTables.bootstrap.js"></script>
