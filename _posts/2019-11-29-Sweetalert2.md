@@ -33,9 +33,14 @@ tags:
 * **高级**
 
     ```javascript
+
+    "大的提示框"
+
     Swal.fire({
     // 显示的图标 有：success，error，warning，info，question
     type: 'warning',
+    // 显示时间
+    timer:1300,
     // 提示信息标题
     title: "你确定要删除"+tbData2.uname+"吗？",
     // 是否显示取消按钮
@@ -62,4 +67,18 @@ tags:
                 Swal.fire("失败", "已取消删除", "error");
             }
         })
+
+
+    "小提示框"
+    Swal.fire({
+        toast: true,
+        title:"标题",
+        // 自定义图标宽度
+        width:300,
+        showConfirmButton: false,
+        // 显示时间
+        timer:1300,
+        // 图标
+        type:"success"
+    });
     ```
