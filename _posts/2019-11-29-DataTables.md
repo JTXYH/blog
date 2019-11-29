@@ -40,21 +40,21 @@ tags:
 
 ```javascript
 $('#example1').DataTable({
-        // 发起ajax请求到后台取数据
+        "发起ajax请求到后台取数据"
     	"ajax": "/02mavenWeb/uinfo/selectAll",
-        // 设置显示的条数
+        "设置显示的条数"
     	"aLengthMenu": [3,5,7], 
-        // 默认显示的条数
+        "默认显示的条数"
     	'iDisplayLength':3,
-        // 自动宽度
+        "自动宽度"
         "autoWidth": false,
         "destroy": true,
-        // 返回的json自动解析，必须格式是 data:[数据1:xx,数据2:xx]
+        "返回的json自动解析，必须格式是 data:[数据1:xx,数据2:xx]"
         "columns": [
             { "data": "uid" },
             { "data": "uname" },
             { "data": "cname" },
-            // 给不需要传数据的标签设置默认值
+            "给不需要传数据的标签设置默认值"
             {"defaultContent":'<button id="uploadCinfo" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal1"><i class="fas fa-pencil-alt"></i>修改</button><button id="delCinfo" class="btn btn-danger btn-sm" style="float:right;"><i class="fas fa-trash"></i>删除</button>'}
         ]
 });

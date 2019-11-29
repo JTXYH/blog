@@ -37,32 +37,32 @@ tags:
     "大的提示框"
 
     Swal.fire({
-    // 显示的图标 有：success，error，warning，info，question
+    "显示的图标 有：success，error，warning，info，question"
     type: 'warning',
-    // 显示时间
+    "显示时间"
     timer:1300,
-    // 提示信息标题
+    "提示信息标题"
     title: "你确定要删除"+tbData2.uname+"吗？",
-    // 是否显示取消按钮
+    "是否显示取消按钮"
     showCancelButton: true,
-    // 确定按钮的颜色
+    "确定按钮的颜色"
     confirmButtonColor: '#3085d6',
-    // 取消按钮的颜色
+    "取消按钮的颜色"
     cancelButtonColor: '#d33',
-    // 确定按钮显示的字
-    confirmButtonText: '确定删除！',
+    "确定按钮显示的字"
+    cofirmButtonText: '确定删除！',
     // 取消按钮显示的字
     cancelButtonText: '取消'
         }).then((result) => {
-            // 如果点击了确定按就执行这里面的逻辑
+            "如果点击了确定按就执行这里面的逻辑"
             if (result.value) {
                 Swal.fire('成功',tbData2.uname+'已成功删除','success');
-                // 删除数据
+                "删除数据"
                 $.post("/02mavenWeb/uinfo/delete",{"uid":tbData2.uid},function(){
-                    // 重载表格
+                    "重载表格"
                     table.ajax.reload( null, false );
                 });
-            // 点击了取消按钮就执行这里面的逻辑
+            "点击了取消按钮就执行这里面的逻辑"
             }else {
                 Swal.fire("失败", "已取消删除", "error");
             }
@@ -73,12 +73,12 @@ tags:
     Swal.fire({
         toast: true,
         title:"标题",
-        // 自定义图标宽度
+        "自定义图标宽度"
         width:300,
         showConfirmButton: false,
-        // 显示时间
+        "显示时间"
         timer:1300,
-        // 图标
+        "图标"
         type:"success"
     });
     ```
