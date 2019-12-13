@@ -76,7 +76,7 @@ table.ajax.reload( null, false );
 #### 5、获取所有ajax返回数据
 
 ```javascript
-table.ajax.json();
+table.ajax.json().datas;
 ```
 
 #### 6、后端分页

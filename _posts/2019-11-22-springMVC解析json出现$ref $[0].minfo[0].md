@@ -18,17 +18,17 @@ tags:
 * 解决：
 
 ```xml
-    配置一个这个bean
-	<bean id="disableCircularReferenceDetect" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
-    	<property name="staticField" value="com.alibaba.fastjson.serializer.SerializerFeature.DisableCircularReferenceDetect" />
-	</bean>
+配置一个这个bean
+<bean id="disableCircularReferenceDetect" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+    <property name="staticField" value="com.alibaba.fastjson.serializer.SerializerFeature.DisableCircularReferenceDetect" />
+</bean>
 
-    配置fastjson的时候配置这个属性
-    <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
-        <property name="features">
-            <list>
-                <ref bean="disableCircularReferenceDetect" />
-            </list>
-        </property>
-    </bean>
+配置fastjson的时候配置这个属性
+<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+    <property name="features">
+        <list>
+            <ref bean="disableCircularReferenceDetect" />
+        </list>
+    </property>
+</bean>
 ```
