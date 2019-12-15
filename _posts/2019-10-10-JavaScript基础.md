@@ -21,13 +21,13 @@ tags:
 1. **script标签**
 2. **scrip标签加src 引用js文件**
 3. **在元素的事件中直接编写js代码**
-4. 
-    * 与html结合方式
-        1. 内部JS：**定义\<script\>，标签体内容就是js代码**
-        2. 外部JS：**定义\<script\>，通过src属性引入外部js文件**
-    * 注意：
-        1. \<script\>可以定义在**html页面的任何地方。但定义的位置会影响执行顺序**
-        2. \<script\>可以**定义多个**
+
+* 与html结合方式
+    1. 内部JS：**定义\<script\>，标签体内容就是js代码**
+    2. 外部JS：**定义\<script\>，通过src属性引入外部js文件**
+* 注意：
+    1. \<script\>可以定义在**html页面的任何地方。但定义的位置会影响执行顺序**
+    2. \<script\>可以**定义多个**
 
 # ECMAScript基本语法
 #### 1、注释
@@ -90,7 +90,7 @@ tags:
         var [x,y,z] = [1,2,3];
         console.log(x+y+z); '输出6'
 
-        var data = {'name':'小米','modal':'Y999'，'price':'2999'};
+        var data = {'name':'小米','modal':'Y999','price':'2999'};
         var {name,modal,price} = data;
         console.log(name); '输出小米'
 
@@ -406,9 +406,9 @@ tags:
 
     * **filter**方法：**Array的filter\(\)**方法把传入的函数**依次作用于每个元素**，然后**根据返回值是true还是false**决定**保留还是丢弃**该元素
 
-        * **element*：指的是**数组中的单个元素**
-        * **index*：指的是**数组中的索引**
-        * **self*：指的是**数组本身**
+        * **element**：指的是**数组中的单个元素**
+        * **index**：指的是**数组中的索引**
+        * **self**：指的是**数组本身**
 
     ```javascript
     "排除空字符串"
@@ -629,7 +629,7 @@ tags:
             return 'y比x大';
         }
     }
-    console.log(fn(10,11)); // 输出y比x大
+    console.log(fn(10,11)); '输出y比x大'
     ```
 
 * **可变参数**
@@ -665,7 +665,7 @@ tags:
     console.log(g.next()); '输出{value: 22, done: true}'
     console.log(g.next()); '输出{value: undefined, done: true}'
 
-    "使用for ... of**
+    "使用for ... of"
     for(let x of g){
         console.log(x); '输出20,21'
     }
