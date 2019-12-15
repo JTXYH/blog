@@ -109,8 +109,8 @@ se.removeSession("name")
         ```xml
         <session-config>
             <session-timeout>30</session-timeout>
-            </session-config>
-            ```
+        </session-config>
+        ```
 
 4. session用于**存储一次会话的多次请求的数据**，存在服务器
 5. session可以**存储任意类型，任意大小的数据**
