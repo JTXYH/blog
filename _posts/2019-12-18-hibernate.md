@@ -32,9 +32,8 @@ tags:
 
 * 创建java项目，添加**hibernate配置**
 
-![项目设置.png](/项目设置.png)
-![选择Hibernate.png](/选择Hibernate.png)
-![创建.png](/创建.png)
+![创建.png](https://raw.githubusercontent.com/JTXYH/blog_comment/master/blog_imgs/%E5%88%9B%E5%BB%BA.png)
+![生成hibernate.png](https://raw.githubusercontent.com/JTXYH/blog_comment/master/blog_imgs/%E7%94%9F%E6%88%90hibernate.png)
 
 #### 2、配置hibernate.cfg.xml
 
@@ -62,9 +61,8 @@ tags:
 
 #### 3、生成实体类和配置
 
-![创建相关.png](/创建相关.png)
-![生成实体类.png](/生成实体类.png)
-
+![创建相关.png](https://raw.githubusercontent.com/JTXYH/blog_comment/master/blog_imgs/%E5%88%9B%E5%BB%BA%E7%9B%B8%E5%85%B3.png)
+![生成实体类.png](https://raw.githubusercontent.com/JTXYH/blog_comment/master/blog_imgs/%E7%94%9F%E6%88%90%E5%AE%9E%E4%BD%93%E7%B1%BB.png)
 #### 4、hbm.xml配置
 
 * 修改映射文件的**id生成策略**
