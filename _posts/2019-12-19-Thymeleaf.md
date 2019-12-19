@@ -16,13 +16,13 @@ tags:
 #### 1、spring-boot中使用
 1. 加依赖
 
-```xml
-<!--添加thymeleaf模板引擎-->
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-thymeleaf</artifactId>
-</dependency>
-```
+    ```xml
+    <!--添加thymeleaf模板引擎-->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    ```
 
 2. 在**html标签头内**加上：**xmlns:th="http://www.thymeleaf.org"**
 3. 因为**thymeleaf会在内存中留下缓存**，所以在spring-boot项目开发阶段需要将缓存**暂时关闭**，在**application.properties**中设置**spring.thymeleaf.cache=false**关闭thymeleaf缓存
@@ -34,7 +34,7 @@ tags:
     * 文档表达式：**~\{页面 :: 片段名称\}**
     * 选择表达式：***\{\}**
 * **属性**：
-    * **th:text**：用在双标签的属性中，作用是替换标签之间的文本。结合**属性表达式**$\{\}使用。可以通过\[\[$\{\}\]\]取代**th:text**
+    * **th:text**：用在双标签的属性中，作用是替换标签之间的文本。结合**属性表达式$\{\}**使用。可以通过**\[\[$\{\}\]\]**取代**th:text**
 
         ```html
         <!--获取model中的数据直接使用 名字 获取-->
@@ -48,7 +48,10 @@ tags:
         <p>[[${session.s}]]</p>
         <hr>
 
-        <!--获取servletContext中的数据，使用#servletContext.getAttribute('名字')获取-->
+        <!--
+            获取servletContext中的数据，
+            使用#servletContext.getAttribute('名字')获取
+        -->
         <p th:text="${#servletContext.getAttribute('sc')}"></p>
         <p>[[${#servletContext.getAttribute('sc')}]]</p>
         <hr>
