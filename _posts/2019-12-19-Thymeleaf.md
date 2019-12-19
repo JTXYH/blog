@@ -6,7 +6,8 @@ date:       2019-12-19
 author:     极客小祥
 header-img: img/text/JAVA.jpg
 catalog: true
-tags: - JAVA
+tags: 
+    - JAVA
 ---
 
 # Thymeleaf
