@@ -629,24 +629,18 @@ public class MyWebMvcConfigurer implements WebMvcConfigurer {
     2. 在需要使用redis的类上使用注解
         
         ```java
-        /**
-        * 先去缓存找，找到返回，找不到查数据加入缓存
-        * 在查询方法上加Cacheable注解,先去缓存中找userinfo:23的值，找到则返回，找不到执行方法，把方法返回值加入缓存。
-        * condition：方法执行之前的条件判断
-        * unless:方法执行完后的条件判断
-        * @param uid
-        * @return
-        */
+        
+        "先去缓存找，找到返回，找不到查数据加入缓存"
+        "在查询方法上加Cacheable注解,先去缓存中找userinfo:23的值，找到则返回，找不到执行方法，把方法返回值加入缓存。"
+        "condition：方法执行之前的条件判断"
+        "unless:方法执行完后的条件判断"
         @Cacheable(cacheNames = "userinfo",key = "#uid",unless = "#result==null")
         public Uinfo getUserById(@PathVariable("uid") int uid){
             Uinfo sysuser = sm.selectByPrimaryKey(uid);
             return sysuser;
         }
-        /**
-        * 用在删改的方法上。当删除和修改数据时，把缓存中对应数据删除掉。
-        * @param uid
-        * @return
-        */
+
+        // 用在删改的方法上。当删除和修改数据时，把缓存中对应数据删除掉。
         @GetMapping("/udel/{uid}")
         @CacheEvict(cacheNames = "userinfo",key = "#uid")
         public int delUserById(@PathVariable("uid") int uid){
@@ -734,3 +728,26 @@ public class MyWebMvcConfigurer implements WebMvcConfigurer {
         }
     }
     ```
+
+# 其他
+
+#### 1、开启idea自动编译
+
+* 在**pom.xml中添加依赖**
+
+    ```xml
+    <!--实现热部署-->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <optional>true</optional>
+    </dependency>
+    ```
+
+* 开启idea自动编译设置
+    1. 在设置中打开
+        * ![springboot开启idea热部署1.png](https://raw.githubusercontent.com/JTXYH/blog_comment/master/blog_imgs/springboot%E5%BC%80%E5%90%AFidea%E7%83%AD%E9%83%A8%E7%BD%B21.png)
+    2. 使用**Ctrl+Shift+Alt+/**
+        * ![springboot开启idea热部署2.png](https://raw.githubusercontent.com/JTXYH/blog_comment/master/blog_imgs/springboot%E5%BC%80%E5%90%AFidea%E7%83%AD%E9%83%A8%E7%BD%B22.png)
+    3. 选择
+        * ![springboot开启idea热部署3.png](https://raw.githubusercontent.com/JTXYH/blog_comment/master/blog_imgs/springboot%E5%BC%80%E5%90%AFidea%E7%83%AD%E9%83%A8%E7%BD%B23.png)
