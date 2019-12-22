@@ -25,22 +25,21 @@ tags:
 * **特点**：
     1. Window对象**不需要创建**，可以直接使用。**window.方法名();**
     2. window引用可以省略。**方法名();**
-* **方法**：
-    * 与**弹出框有关**的方法
-        1. **alert(内容)**：显示一段消息和一个确认按钮的**警告框**
-        2. **confirm(内容)**：显示一段消息和确认按钮和取消按钮的**对话框**
-            * 如果点击**确定**则方法返回**true**
-            * 如果点击**去下***则方法返回**false**
-        3. **prompt()**：显示可提示用户输入的**对话框**
-            * 返回值：获取用户**输入的值**
-    * 与**开发关闭有关**的方法：
-        1. **close()**：关闭浏览器窗口，谁调用就关谁
-        2. **open(可以写新窗口的地址)**：打开一个新的浏览器窗口，**返回新的window对象**
-    * 与**定时器有关**的方法：
-        1. **setTimeout("函数()",毫秒数)**：在指定毫秒数后执行函数，只**执行一次**，返回一个**id**，用于取消定时器
-        2. **clearTimeout(定时器id)**：取消**setTimeout()**方法设置的timeout
-        3. **setInterval("函数()",毫秒数)**：在指定毫秒数后执行函数，**一直执行**，返回一个**id**，用于取消定时器
-        4. **clearInterval(定时器id)**：取消**setInterval()**方法设置的timeout
+* 与**弹出框有关**的方法
+    1. **alert(内容)**：显示一段消息和一个确认按钮的**警告框**
+    2. **confirm(内容)**：显示一段消息和确认按钮和取消按钮的**对话框**
+        * 如果点击**确定**则方法返回**true**
+        * 如果点击**去下***则方法返回**false**
+    3. **prompt()**：显示可提示用户输入的**对话框**
+        * 返回值：获取用户**输入的值**
+* 与**开发关闭有关**的方法：
+    1. **close()**：关闭浏览器窗口，谁调用就关谁
+    2. **open(可以写新窗口的地址)**：打开一个新的浏览器窗口，**返回新的window对象**
+* 与**定时器有关**的方法：
+    1. **setTimeout("函数()",毫秒数)**：在指定毫秒数后执行函数，只**执行一次**，返回一个**id**，用于取消定时器
+    2. **clearTimeout(定时器id)**：取消**setTimeout()**方法设置的timeout
+    3. **setInterval("函数()",毫秒数)**：在指定毫秒数后执行函数，**一直执行**，返回一个**id**，用于取消定时器
+    4. **clearInterval(定时器id)**：取消**setInterval()**方法设置的timeout
 * **属性**：
     1. **获取其他BOM对象**：
         * history
@@ -55,7 +54,8 @@ tags:
     1. **window.location**
     2. **location**
 * 方法：
-    1. **reload()**：重新加载当前文档(刷新)
+    1. **reload\(\)**：重新加载当前文档\(刷新\)
+    2. **assign\(\)**：加载一个新的页面，**括号中写url路径**
 * 属性：
     1. **href**：设置或返回完整的URL
         
@@ -63,6 +63,8 @@ tags:
         跳转到这个页面
         window.location.href = "./index.html";
         ```
+    
+    2. **search**：获取url后面的参数
 
 #### 3、History
 * 创建(获取)：
@@ -90,41 +92,43 @@ tags:
     2. **XML DOM**-针对XML文档
     3. **HTML DOM**-针对HTML文档
 
-#### 1、核心DOM模型
-* **Document**：文档对象
-    1. 创建(获取)：在html dom模型中使用**window对象来获取**
-        * **window.document**
-        * **document**
-    2. 方法：
-        1. **获取Element对象**
-            * **getElementById()**：根据id获取元素对象
-            * **getElementsByTagName()**：根据元素名称获取所有元素对象，**返回数组**
-            * **getElementsByClassName()**：根据class获取所有元素对象，**返回数组**
-            * **getElementsByName()**：根据name属性值获取所有元素对象，**返回数组**
-        2. **创建其他DOM对象**
-            * createAttribute(name)：创建拥有指定名称的属性节点，并返回新的 Attr 对象
-            * createComment()：创建注释节点
-            * **createElement()**：创建元素节点
-            * **createTextNode()**：创建文本节点
+#### 1、Document文档对象
+1. 创建(获取)：在html dom模型中使用**window对象来获取**
+    * **window.document**
+    * **document**
+2. 方法：
+    1. **获取Element对象**
+        * **getElementById()**：根据id获取元素对象
+        * **getElementsByTagName()**：根据元素名称获取所有元素对象，**返回数组**
+        * **getElementsByClassName()**：根据class获取所有元素对象，**返回数组**
+        * **getElementsByName()**：根据name属性值获取所有元素对象，**返回数组**
+    2. **创建其他DOM对象**
+        * createAttribute(name)：创建拥有指定名称的属性节点，并返回新的 Attr 对象
+        * createComment()：创建注释节点
+        * **createElement()**：创建元素节点
+        * **createTextNode()**：创建文本节点
 
-* **Element**
-    1. 创建(获取)：通**document来创建获取**
-    2. 方法：
-        1. **removeAttribute("属性名")**：删除属性
-        2. **setAttribute("属性名","属性值")**：设置属性
+#### 2、Element
+1. 创建(获取)：通**document来创建获取**
+2. 方法：
+    1. **removeAttribute("属性名")**：删除属性
+    2. **setAttribute("属性名","属性值")**：设置属性
 
-* **Node**：节点对象
-    * 特点：**所有dom对象都可以被认为是一个节点**
-    * 方法：
-        1. **CRUD dom树**：
-            * **appendChild(节点名)**：向节点的子节点列表的结尾添加新的子节点。
-            * **removeChild(节点名)**：删除（并返回）当前节点的指定子节点。
-            * replaceChild(原节点,替换的节点)：用新节点替换一个子节点。
-    * 属性：
-        1. **parentNode**：返回节点的父节点
+#### 3、Node节点对象
+* 特点：**所有dom对象都可以被认为是一个节点**
+* 方法：
+    1. **CRUD dom树**：
+        * **appendChild(节点名)**：向节点的子节点列表的结尾添加新的子节点。
+        * **removeChild(节点名)**：删除（并返回）当前节点的指定子节点。
+        * replaceChild(原节点,替换的节点)：用新节点替换一个子节点。
+* 属性：
+    1. **parentNode**：返回节点的父节点
 
-#### 2、HTML DOM
-* 标签体的**设置和获取**：**innerHTML**
+#### 4、HTML DOM
+* **innerHTML**：标签体的**设置和获取**
+* **insertBefore\(新的元素,旧元素\)**：添加新元素到元素前面
+* **appendChild\(新元素\)**：添加新元素到指定元素内
+* **removeChild\(删除的元素\)**：删除子元素
 * 控制**样式**：
     1. 使用**style**属性设置
     2. 提前定义类选择器样式，使用**className**属性设置class属性值
@@ -140,11 +144,11 @@ tags:
 4. **注册监听**：*将事件，事件源，监听器结合在一起*。当事件源发生了某个时间，则触发执行某个监听器代码
 
 #### 2、绑定事件
- 1. **直接在html标签上，指定事件的属性(操作)，属性值就是js代码**
- 2. **通过js获取元素对象，指定事件属性，设置一个函数**
+ 1. 直接在html标签上，指定事件的属性(操作)，**属性值就是js代码**
+ 2. 通过js获取元素对象，指定事件属性，**设置一个函数**
 
 #### 3、常见事件
-1. 单击事件：
+1. 点击事件：
     * **onclick**：单击事件
     * **ondblclick**：双击事件
 2. 焦点事件：
@@ -171,3 +175,63 @@ tags:
     * **onsubmit**：确认按钮被点击
         * 可以允许或者阻止表单提交：返回**true或者false**
     * **onreset**：重置按钮被点击
+
+# 文件处理
+* HTML5的File API提供了**File和FileReader**两个主要对象，可以**获得文件信息并读取文件**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	#test-image-preview {
+		width: 500px;
+		height: 300px;
+		border: 2px;
+	}
+</style>
+<body>
+	<div id="fileShow"></div>
+	<input type="file" id="inputFile" name="test">
+	<p id="fileInfo"></p>
+</body>
+<script type="text/javascript">
+	var
+    fileInput = document.getElementById('inputFile'),
+    info = document.getElementById('fileInfo'),
+    preview = document.getElementById('fileShow');
+// 监听change事件:
+fileInput.addEventListener('change', function () {
+    // 清除背景图片:
+    preview.style.backgroundImage = '';
+    // 检查文件是否选择:
+    if (!fileInput.value) {
+        info.innerHTML = '没有选择文件';
+        return;
+    }
+    // 获取File引用:
+    var file = fileInput.files[0];
+    // 获取File信息:
+    info.innerHTML = '文件: ' + file.name + '<br>' +
+                     '大小: ' + file.size + '<br>' +
+                     '修改: ' + file.lastModifiedDate;
+    if (file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/gif') {
+        alert('不是有效的图片文件!');
+        return;
+    }
+    // 读取文件:
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var
+            data = e.target.result; // 'data:image/jpeg;base64,/9j/4AAQSk...(base64编码)...'            
+        preview.style.backgroundImage = 'url(' + data + ')';
+    };
+    // 以DataURL的形式读取文件:
+    reader.readAsDataURL(file);
+});
+</script>
+</html>
+```
