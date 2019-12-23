@@ -85,14 +85,9 @@ jQuery(document).ready(function($) {
 
 // 自定义的搜索框
 $(function () {
-    var url = window.location.href;
-    if (url === "https://jtxyh.github.io/about/"){
-        $("html").off('click');
-    }else{
-        // 让用户无论点击页面哪个地方都可以直接进入搜索框
-        $("html").click(function () {
-            $("#searchInput").focus();
-        });
+    // 判断是否是移动端，移动端自动隐藏搜索框
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
+        $("#searchDiv").css('display','none');
     }
     // 用来存储所有的h2标题标签
     var allTitleName = [];
