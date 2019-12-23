@@ -88,10 +88,12 @@ $(function () {
     search();
     function search(){
         // 判断是否是移动端或者about页面，自动隐藏搜索框
-        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) || window.location.href === "https://jtxyh.github.io/about/") {
-            $("#searchDiv").css('display', 'none');
+        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) || window.location.href !== "https://jtxyh.github.io/") {
+            $("#searchDiv").val(''); // 清空之前的内容
+            $("#searchDiv").css('display', 'none'); // 隐藏搜索框
             return false;
         }
+        // 在主页面直接敲击键盘会自动触发搜索框搜索
         $('html').on('keypress', function (event) {
             if (event.keyCode !== '') {
                 $("#searchInput").focus();
