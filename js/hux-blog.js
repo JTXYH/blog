@@ -93,6 +93,9 @@ $(function () {
             $("#searchInput").css('display', 'none'); // 隐藏搜索框
             return false;
         }
+        // 绑定事件，用来删除搜索框中的数据
+        $('.navbar-nav').on('click', function () { $('#searchInput').val('') });
+        $('.post-preview').on('click', function () { $('#searchInput').val('') });
         // 在主页面直接敲击键盘会自动触发搜索框搜索
         $('html').on('keypress', function (event) {
             if (event.keyCode !== '') {
