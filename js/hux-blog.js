@@ -89,8 +89,7 @@ $(function () {
     function search(){
         // 判断是否是移动端或者about页面，自动隐藏搜索框
         if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) || window.location.href !== "https://jtxyh.github.io/") {
-            $("#searchDiv").val(''); // 清空之前的内容
-            $("#searchInput").css('display', 'none'); // 隐藏搜索框
+            $("#searchDiv").css('display', 'none'); // 隐藏搜索框
             return false;
         }
         // 绑定事件，用来删除搜索框中的数据
