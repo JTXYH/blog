@@ -84,7 +84,9 @@ layout: default
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="输入标题名" aria-label="输入标题名"
                         aria-describedby="searchBtn">
-                    <span class="btn btn-success" id="searchBtn">搜索</span>
+                    <div class="input-group-prepend">
+                        <span class="btn btn-success btn-sm" id="searchBtn">搜索</span>
+                    </div>
                 </div>
                 <!-- Featured Tags -->
                 {% if site.featured-tags %}
