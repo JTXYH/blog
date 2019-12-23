@@ -81,7 +81,13 @@ layout: default
                 col-xs-12
                 sidebar-container
             ">
-                <input type="text"><button>搜索</button>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="输入标题名" aria-label="输入标题名"
+                        aria-describedby="searchBtn">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" id="searchBtn">搜索</button>
+                    </div>
+                </div>
                 <!-- Featured Tags -->
                 {% if site.featured-tags %}
                 <section>
