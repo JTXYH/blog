@@ -85,33 +85,40 @@ jQuery(document).ready(function($) {
 
 // 自定义的搜索框
 $(function () {
-    // 判断是否是移动端，移动端自动隐藏搜索框
-    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
-        $("#searchDiv").css('display','none');
-    }
-    // 用来存储所有的h2标题标签
-    var allTitleName = [];
-    var allTiltle = $(".post-title");
-    $.each(allTiltle, function (i, e) {
-        allTitleName.push(e);
-    })
-
-    // 给input绑定两个事件，当内容改变自动查询
-    $("#searchInput").bind('input propertychange', function () {
-        // 获取到输入的查询内容并转为小写
-        var searchValue = $("#searchInput").val().toLowerCase();
-        // 遍历所有的title
-        $.each(allTitleName, function (i, e) {
-            // 如果title里面的字包含输入的字符
-            if ($(e).html().replace(/\s/ig, '').toLowerCase().indexOf(searchValue) != -1) {
-                // 将当前的标题的div和分割线打开
-                $(e).parent().parent().css('display', 'block');
-                $(e).parent().parent().next().css('display', 'block');
-            } else {
-                // 没有匹配上隐藏
-                $(e).parent().parent().css('display', 'none');
-                $(e).parent().parent().next().css('display', 'none');
-            }
+    search();
+    function search(){
+        // 判断是否是移动端，移动端自动隐藏搜索框
+        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) || window.location.href === "https://jtxyh.github.io/about/") {
+            $("#searchDiv").css('display', 'none');
+            return false;
+        }
+        $("html").click(function () {
+            $("#searchInput").focus();
+        });
+        // 用来存储所有的h2标题标签
+        var allTitleName = [];
+        var allTiltle = $(".post-title");
+        $.each(allTiltle, function (i, e) {
+            allTitleName.push(e);
         })
-    })
+
+        // 给input绑定两个事件，当内容改变自动查询
+        $("#searchInput").bind('input propertychange', function () {
+            // 获取到输入的查询内容并转为小写
+            var searchValue = $("#searchInput").val().toLowerCase();
+            // 遍历所有的title
+            $.each(allTitleName, function (i, e) {
+                // 如果title里面的字包含输入的字符
+                if ($(e).html().replace(/\s/ig, '').toLowerCase().indexOf(searchValue) != -1) {
+                    // 将当前的标题的div和分割线打开
+                    $(e).parent().parent().css('display', 'block');
+                    $(e).parent().parent().next().css('display', 'block');
+                } else {
+                    // 没有匹配上隐藏
+                    $(e).parent().parent().css('display', 'none');
+                    $(e).parent().parent().next().css('display', 'none');
+                }
+            })
+        })
+    }
 })
