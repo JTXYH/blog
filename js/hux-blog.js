@@ -92,9 +92,11 @@ $(function () {
             $("#searchDiv").css('display', 'none');
             return false;
         }
-        $("html").click(function () {
-            $("#searchInput").focus();
-        });
+        $('html').on('keypress', function (event) {
+            if (event.keyCode !== '') {
+                $("#searchInput").focus();
+            }
+        })
         // 用来存储所有的h2标题标签
         var allTitleName = [];
         var allTiltle = $(".post-title");
