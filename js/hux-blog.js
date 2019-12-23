@@ -82,3 +82,24 @@ jQuery(document).ready(function($) {
             });
     }
 });
+
+$(function () {
+    var allTitleName = [];
+    var allTiltle = $(".post-title");
+    $.each(allTiltle, function (i, e) {
+        allTitleName.push(e);
+    })
+
+    $("#searchInput").bind('input propertychange', function () {
+        var searchValue = $("#searchInput").val().toLowerCase();
+        $.each(allTitleName, function (i, e) {
+            if ($(e).html().replace(/\s/ig, '').toLowerCase().indexOf(searchValue) != -1) {
+                $(e).parent().parent().css('display', 'block');
+                $(e).parent().parent().next().css('display', 'block');
+            } else {
+                $(e).parent().parent().css('display', 'none');
+                $(e).parent().parent().next().css('display', 'none');
+            }
+        })
+    })
+})
