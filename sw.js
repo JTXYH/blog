@@ -79,7 +79,7 @@ self.addEventListener('install', e => {
     caches.open(PRECACHE).then(cache => {
       return cache.add('offline.html')
       .then(self.skipWaiting())
-      .catch(err => console.log(err))
+      // .catch(err => console.log(err))
     })
   )
 });
@@ -92,7 +92,7 @@ self.addEventListener('install', e => {
  *  waitUntil(): activating ====> activated
  */
 self.addEventListener('activate',  event => {
-  console.log('service worker activated.')
+  // console.log('service worker activated.')
   event.waitUntil(self.clients.claim());
 });
 
@@ -105,7 +105,7 @@ self.addEventListener('activate',  event => {
  */
 self.addEventListener('fetch', event => {
   // logs for debugging
-  console.log(`fetch ${event.request.url}`)
+  // console.log(`fetch ${event.request.url}`)
   //console.log(` - type: ${event.request.type}; destination: ${event.request.destination}`)
   //console.log(` - mode: ${event.request.mode}, accept: ${event.request.headers.get('accept')}`)
 

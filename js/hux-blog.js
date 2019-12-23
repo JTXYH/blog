@@ -87,7 +87,7 @@ jQuery(document).ready(function($) {
 $(function () {
     search();
     function search(){
-        // 判断是否是移动端，移动端自动隐藏搜索框
+        // 判断是否是移动端或者about页面，自动隐藏搜索框
         if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) || window.location.href === "https://jtxyh.github.io/about/") {
             $("#searchDiv").css('display', 'none');
             return false;
