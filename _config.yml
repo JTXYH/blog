@@ -30,7 +30,7 @@ twitter_username:   JTX520YH
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 permalink: pretty
-paginate: 9  # 这里是用来设置一页显示多少篇文章的
+paginate: 100000  # 这里是用来设置一页显示多少篇文章的，使用搜索的时候使用分页会失效
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
