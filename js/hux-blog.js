@@ -4,11 +4,11 @@
  * Licensed under Apache 2.0 (https://github.com/IronSummitMedia/startbootstrap/blob/gh-pages/LICENSE)
  */
 
- /*!
- * Hux Blog v1.6.0 (http://startbootstrap.com)
- * Copyright 2016 @huxpro
- * Licensed under Apache 2.0 
- */
+/*!
+* Hux Blog v1.6.0 (http://startbootstrap.com)
+* Copyright 2016 @huxpro
+* Licensed under Apache 2.0 
+*/
 
 // Tooltip Init
 // Unuse by Hux since V1.6: Titles now display by default so there is no need for tooltip
@@ -28,13 +28,13 @@
 // });
 
 // responsive tables
-$(document).ready(function() {
+$(document).ready(function () {
     $("table").wrap("<div class='table-responsive'></div>");
     $("table").addClass("table");
 });
 
 // responsive embed videos
-$(document).ready(function() {
+$(document).ready(function () {
     $('iframe[src*="youtube.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
     $('iframe[src*="youtube.com"]').addClass('embed-responsive-item');
     $('iframe[src*="vimeo.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
@@ -42,17 +42,17 @@ $(document).ready(function() {
 });
 
 // Navigation Scripts to Show Header on Scroll-Up
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     var MQL = 1170;
 
     //primary navigation slide-in effect
     if ($(window).width() > MQL) {
         var headerHeight = $('.navbar-custom').height(),
-            bannerHeight  = $('.intro-header .container').height();     
+            bannerHeight = $('.intro-header .container').height();
         $(window).on('scroll', {
-                previousTop: 0
-            },
-            function() {
+            previousTop: 0
+        },
+            function () {
                 var currentTop = $(window).scrollTop(),
                     $catalog = $('.side-catalog');
 
@@ -83,6 +83,30 @@ jQuery(document).ready(function($) {
     }
 });
 
+$(function () {
+    // 如果是手机端设置下样式，不然会不好看
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        $("#tagSearchDiv").css("margin-top", "20px");
+    }
+    // 获取所有文章a标签
+    var allTagCloud = $(".myTagCloud");
+    // 获取搜索框标签
+    var seInput = $("#tagSearchInput");
+    // 获取文章总数
+    seInput.attr("placeholder", "当前共有" + allTagCloud.size() + "篇文章");
+    // 当改变input标签时触发
+    seInput.bind('input propertychange',function(){
+        var searchValue = seInput.val().toLowerCase();
+        $.each(allTagCloud,function(i,e){
+            var pageTitle = $(e).html().replace(/\s/ig, '');
+            if (pageTitle.toLowerCase().indexOf(searchValue) != -1 && searchValue != ""){
+                $(allTagCloud[i]).addClass("mySearchTag");
+            }else{
+                $(allTagCloud[i]).removeClass("mySearchTag");
+            }
+        })
+    })
+})
 // 自定义的搜索框
 $(function () {
     search();
