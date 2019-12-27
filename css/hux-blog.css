@@ -844,6 +844,9 @@ img::-moz-selection {
   background: transparent;
 }
 /* Hux add tags support */
+.mySearchTag{
+  background-color: #ffc100!important;
+}
 .tags {
   margin-bottom: -5px;
 }
