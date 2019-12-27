@@ -918,7 +918,7 @@ img::-moz-selection {
   margin-top: 0px;
 }
 .listing-seperator {
-  color: #ffc100;
+  color: #262626;
   font-size: 21px !important;
 }
 .listing-seperator::before {
