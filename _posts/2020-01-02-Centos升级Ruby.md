@@ -2,7 +2,7 @@
 layout:     post
 title:      Centos升级Ruby
 subtitle:   使用rvm
-date:       2020-
+date:       2020-01-02
 author:     极客小祥
 header-img: img/text/LINUX.jpg
 catalog: true
