@@ -11,6 +11,7 @@ tags:
 ---
 
 # 简介
+* SweetAlert可以替代JavaScript原生的alert和confirm等函数呈现的弹出提示框，它将提示框进行了美化，并且允许自定义，支持设置提示框标题、提示类型、内容展示图片、确认取消按钮文本、点击后回调函数等。
 * 一个漂亮的、响应式的、可定制的和可访问（WAI-ARIA）的JAVASCRIPT弹窗
 * 无论是在电脑、手机还是平板上，SweetAlert2都会在页面上自动居中显示
 * 官网：**[Sweetalert2](https://sweetalert2.github.io/#examples)**
