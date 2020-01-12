@@ -127,8 +127,8 @@ $(function () {
         })
         // 用来存储所有的h2标题标签
         var allTitleName = [];
-        var allTiltle = $(".post-title");
-        $.each(allTiltle, function (i, e) {
+        var allTitle = $(".post-title");
+        $.each(allTitle, function (i, e) {
             allTitleName.push(e);
         })
 
