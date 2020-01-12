@@ -81,12 +81,12 @@ layout: default
                 col-xs-12
                 sidebar-container
             ">
+                <!-- Featured Tags -->
+                {% if site.featured-tags %}
                 <div class="input-group" id="searchDiv">
                     <input id="searchInput" placeholder='直接输入即搜索' type="text" class="form-control">
                     <span class="input-group-addon"><i class="fa fa-search"></i></span>
                 </div>
-                <!-- Featured Tags -->
-                {% if site.featured-tags %}
                 <section>
                     <hr class="hidden-sm hidden-xs">
                     <h5><a href="{{'/tags/' | prepend: site.baseurl }}">FEATURED TAGS</a></h5>
