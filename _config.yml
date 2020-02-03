@@ -1,47 +1,37 @@
 # Site settings
-title:  HOME  # 中间显示的名称
-SEOTitle: 江天祥的博客  # 网站的搜索标题
-header-img: img/index.jpg  # 首页的背景图片
-email: tianxiang1314520@gmail.com  # 个人介绍页的邮箱
-description: "You need to work harder"  # 给你自己的一句话，在中间显示
-keyword: "JtxBlog,米粉的博客,创建博客,Java教程,python教程,前端教程,github博客创建教程,Jtx的博客"  # 搜索网站的关键词
-url: "http://jtxyh.github.io"          # 你的网站的地址
-baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+title: HOME # 中间显示的名称
+SEOTitle: 微信公众号-极客小祥 # 网站的搜索标题
+header-img: img/index.jpg # 首页的背景图片
+email: tianxiang1314520@gmail.com # 个人介绍页的邮箱
+description: "You need to work harder" # 给你自己的一句话，在中间显示
+keyword: "JtxBlog,米粉的博客,创建博客,Java教程,python教程,前端教程,github博客创建教程,Jtx的博客" # 搜索网站的关键词
+url: "http://jtxyh.github.io" # 你的网站的地址
+baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/JTXYH/JTXYH.github.io" # 你仓库的地址
 
 # Sidebar settings
-sidebar: true                           # 是否显示侧边的个人简介
-sidebar-about-description: "永远相信美好的事情即将发生"  # 给你自己一句话
-sidebar-avatar: /img/avatar_m.jpg      # 头像
-
-
+sidebar: true # 是否显示侧边的个人简介
+sidebar-about-description: "永远相信美好的事情即将发生" # 给你自己一句话
+sidebar-avatar: /img/avatar_m.jpg # 头像
 
 # SNS settings  几类社交账号
 RSS: false
-weibo_username:     5523812072 
-zhihu_username:     xiao-xiang-36-50
-github_username:    JTXYH
-twitter_username:   JTX520YH
+weibo_username: 5523812072
+zhihu_username: xiao-xiang-36-50
+github_username: JTXYH
+twitter_username: JTX520YH
 # facebook_username:  100011175577534
-
-
-
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 permalink: pretty
-paginate: 100000  # 这里是用来设置一页显示多少篇文章的，使用搜索的时候使用分页会失效
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
-
-
+paginate: 100000 # 这里是用来设置一页显示多少篇文章的，使用搜索的时候使用分页会失效
+exclude: ["less", "node_modules", "Gruntfile.js", "package.json", "README.md"]
+anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
 gems: [jekyll-paginate]
-
-
-
 
 # Markdown settings
 # replace redcarpet to kramdown,
@@ -50,9 +40,7 @@ gems: [jekyll-paginate]
 markdown: kramdown
 highlighter: rouge
 kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
-
-
+  input: GFM # use Github Flavored Markdown !important
 
 # 评论系统
 # Disqus（https://disqus.com/）
@@ -60,15 +48,14 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: true    #是否开启Gitalk评论
-  clientID: 40949b6ba0c5f0937a38                           #生成的clientID
-  clientSecret: d4b4d9f46b968fc35af7f24dc0309ff94c392a18    #生成的clientSecret
-  repo: blog_comment    #仓库名称
-  owner: JTXYH    #github用户名
+  enable: true #是否开启Gitalk评论
+  clientID: 40949b6ba0c5f0937a38 #生成的clientID
+  clientSecret: d4b4d9f46b968fc35af7f24dc0309ff94c392a18 #生成的clientSecret
+  repo: blog_comment #仓库名称
+  owner: JTXYH #github用户名
   admin: JTXYH
-  
-  distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 # 统计
 
@@ -77,36 +64,24 @@ gitalk:
 #ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-ga_track_id: 'UA-125866747-1'            # Format: UA-xxxxxx-xx
-ga_domain: auto               # 默认的是 auto, 你如果没有自己的域名，需要改成auto
-
-
-
-
+ga_track_id: "UA-125866747-1" # Format: UA-xxxxxx-xx
+ga_domain: auto # 默认的是 auto, 你如果没有自己的域名，需要改成auto
 
 # Featured Tags
-featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
-
-
+featured-tags: true # 是否使用首页标签
+featured-condition-size: 0 # 相同标签数量大于这个数，才会出现在首页
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
-
-
 # Friends
-friends: [
+friends:
+  [
+    { title: "GitHub", href: "https://github.com/JTXYH" },
     {
-        title: "GitHub",
-        href: "https://github.com/JTXYH"
-    },{
-        title: "知乎",
-        href: "https://www.zhihu.com/people/xiao-xiang-36-50/activities"
+      title: "知乎",
+      href: "https://www.zhihu.com/people/xiao-xiang-36-50/activities",
     },
-    {
-        title: "ZhanQi",
-        href: "http://chenzqi.cn/"
-    }
-]
+    { title: "ZhanQi", href: "http://chenzqi.cn/" },
+  ]
