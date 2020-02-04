@@ -113,7 +113,7 @@ public static void main(String[] args) {
 
 
 #### 2、CLASS类配置方式
-* 在类上加**@ComponentScan\("扫描的地址"\)**进行包扫描
+* 在类上加**@ComponentScan("扫描的地址")**进行包扫描
 * 需要在类上加**@Configuration**注解让包被扫描到
 * 需要引入**properties配置文件**时，在类上加**@PropertySource\("classpath:文件名称"\)**
     * 通过**@Value\($\{properties文件中的key名\}\)**，引入信息赋值到成员变量中
