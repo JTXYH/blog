@@ -193,3 +193,147 @@ function getValue(value: number | string): number | string {
 var a: number = getValue(1);
 var b: string = getValue("1");
 ```
+
+## 类型断言
+
+* 语法：**\<类型\>值**或者**as类型**
+* 类型断言**不是类型转换**，不能断言联合类型中**不存在的类型**
+
+```ts
+function getAssert(name: string | number) {
+  //   return (<string>name).length;
+  return (name as string).length;
+}
+```
+
+## 类型别名
+
+* 给类型起一个名字，采用关键字**type**
+
+```ts
+// 类型别名
+type strType = string | number | boolean;
+var str: strType = "10";
+str = 10;
+str = true;
+
+// 接口类型别名
+interface muchType1 {
+  name: string;
+}
+interface muchType2 {
+  age: number;
+}
+
+type muchType = muchType1 | muchType2;
+var obj1: muchType = { name: "张三" };
+var obj2: muchType = { age: 10 };
+var obj3: muchType = { name: "张三", age: 10 };
+
+// 限制字符串
+type sex = "男" | "女";
+
+function getSex(s:sex): string {
+  return s;
+}
+getSex("男");
+```
+
+## 枚举
+
+* 枚举成员会被赋值**从0开始递增的数字**，同时也会被**枚举值到枚举名进行反向映射**
+* 枚举类型会被编译成一个**双向映射的对象**
+
+```ts
+enum Days {
+  Sun,
+  Mon,
+  Tue,
+  Web,
+  Thu,
+  Fri,
+  Sat
+}
+console.log(Days.Sun) // 打印0
+console.log(Days.Sat) // 打印6
+console.log(Days[1] === "Mon"); // true
+
+enum Days2 {
+    Sun = 3,
+    Mon,
+    Tue,
+}
+console.log(Days.Sun); // 打印3
+```
+
+## 类修饰符
+* **public,private,protected**
+
+```ts
+class Person {
+  // 当一个类的成员变量没有修饰的时候，默认是public进行修饰
+  name = "张三";
+  // 设置private在外界不能访问
+  private age = 10;
+  protected sex = "男";
+  say() {
+    console.log("我的名字：" + this.name);
+  }
+}
+
+var p = new Person();
+p.say();
+p.name;
+
+// 创建子类
+class Child extends Person {
+  eat() {
+    // 访问父类的方法,用super
+    // 不能访问父类的private属性
+    super.say();
+    // 可以访问protected属性的
+    console.log(super.sex);
+  }
+  // 静态方法不需要实例对象就可以调用
+  // 静态方法中不能用 this
+  static test(){
+      console.log("test")
+  }
+}
+
+var c = new Child();
+c.eat();
+// 子类继承了父类，子类就可以访问到父类的公开的属性和方法
+c.name;
+// 可以直接调用静态方法
+Child.test()
+```
+
+## 泛型
+
+```ts
+function getArr<T>(length: number, value: T): Array<T> {
+  let arr = [];
+  for (var i = 0; i < length; i++) {
+    arr[i] = value;
+  }
+  return arr;
+}
+
+var strArr: string[] = getArr<string>(6, "1");
+// 不传类型的时候，根据数字类型倒推
+var numArr: number[] = getArr(6, 1);
+
+
+// 接口中使用泛型
+interface IgetArr {
+  <T>(name: string, value: T): Array<T>;
+}
+
+let fun: IgetArr;
+fun = function(name: string, value: T): Array<T> {
+  return [];
+};
+
+var s: number[] = fun("张三", 1);
+```
